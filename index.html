@@ -1,0 +1,141 @@
+<!--<?php
+require_once template('head'); 
+//首页各个区块标题，调用lang目录下的语言配置文件参数
+$Index_Column1=$lang_Index_Column1;
+$Index_Column2=$lang_Index_Column2;
+$Index_Column3=$lang_Index_Column3;
+$Index_Column4=$lang_Index_Column4;
+$Index_Column5=$lang_Index_Column5;
+$Index_Column6=$lang_Index_Column6;
+$Index_Column7=$lang_Index_Column7;
+$Index_Column8=$lang_Index_Column8;
+//首页各个区块栏目标识和链接
+$Mark1=$lang_Index_Column1Mark;
+$Mark2=$lang_Index_Column2Mark;
+$Mark3=$lang_Index_Column3Mark;
+$Mark4=$lang_Index_Column4Mark;
+$Mark5=$lang_Index_Column5Mark;
+$Mark6=$lang_Index_Column6Mark;
+$Mark7=$lang_Index_Column7Mark;
+$Url2=$class_index[$Mark2]['url'];
+$Url3=$class_index[$Mark3]['url'];
+$Url4=$class_index[$Mark4]['url'];
+$Url5=$class_index[$Mark5]['url'];
+$Url6=$class_index[$Mark6]['url'];
+$Url7=$class_index[$Mark7]['url'];
+//产品展示标签
+$indexproduct=metlabel_list('img',$Mark3,'com');
+//文章列表标签
+$indexnews1=metlabel_list('text',$Mark4,'','time','',1);
+$indexnews2=metlabel_list('text',$Mark5,'','time','',1);
+$indexnews3=metlabel_list('text',$Mark6,'','time','',1);
+//成功案例标签
+$indexcase=metlabel_list('img',$Mark7,'','','','',0);
+//友情链接标签
+$metlinkimg=methtm_link('img','com');
+$metlinktxt=methtm_link('text','com');
+if($lang_Column3ok){
+echo <<<EOT
+-->
+<div class="index inner">
+<div class="scollpic">
+<div class="hpanel"></div>
+		<div class="one">
+			<div class="index-product  style-2">
+				<div>
+					<p id="trigger"></p>
+					<a class="prev" id="car_prev" href="javascript:void(0);"></a> 
+					<a class="next" id="car_next" href="javascript:void(0);"></a> 
+					</div>
+				<div class="clear">
+					<div class="profld" id="indexcar" data-listnum="4">
+<script type="text/javascript">
+$(document).ready(function(){
+if(1==2){
+$(".index-product ol li h3 ").hide();
+$(".index-product").height($(".index-product").height()-15);
+}
+});
+</script>
+{$indexproduct}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="two"></div>	
+</div>
+	<div class="clear"></div>
+<div id="index-bottom">		
+	<div class="aboutus ph ">
+		<h3 class="Ti about"><a href="{$Url2}" title="{$Index_Column2}" class="more fr"></a> <span>{$Index_Column2}</span></h3>
+		<div class="editor">{$index[content]}<div class="clear"></div>
+		</div>
+	</div>
+	<div class="index-news ph ">
+		<h3 class="Ti list1"><a href="{$Url4}"title="{$Index_Column4}" class="more fr"></a> <span>{$Index_Column4}</span></h3>
+		<div>
+		{$indexnews1}
+			<div class="clear"></div>
+		</div> 
+	</div>
+
+	<div class="index-case style-2 ph ">
+		<h3 class="Ti caseti"><a href="{$Url5}" title="{$Index_Column5}" class="more fr"></a><span>{$Index_Column5}</span></h3>
+		<div class="active dl-jqrun contour-1">
+<!--
+EOT;
+$i=0;
+foreach(methtml_getarray($Mark5,'com','time','') as $key=>$val){ 
+$i++;
+echo <<<EOT
+-->
+	<table>
+			<tr class="ind">
+				<td style="width:30%"><a href="{$val[url]}" target='_self' title="$val[title]">
+				<img src="$val[imgurls]" alt="$val[title]" title="{$val[title]}" style="width:90px; height:90px;" /></a></td>
+				<td style="width:70%"> 
+					<h4><a href="$val[url]" target='_self' title="$val[title]">
+<!--
+EOT;
+$content = cnSubStr($val[title],0,10);
+echo <<<EOT
+-->{$content}</a></h4>
+	<p class="desc" title="$val[description]">
+<!--
+EOT;
+$content = cnSubStr($val[description],0,35);
+echo <<<EOT
+-->{$content} </p>
+</td>
+</tr>
+ </table>
+<!--
+EOT;
+if($i>=2)break;
+}
+echo <<<EOT
+-->	
+
+		</div>
+	</div>
+	<div class="clear"></div>
+	
+	</div>
+	<div class="clear"></div>
+	
+<div class="friendlik">	
+	<div class="inner index-top"></div>
+	<div class="inner index-middle linkx">
+		<h3 class="title"> {$Index_Column8}</h3>
+		<div class="txt">{$metlinkimg}</div>
+	</div>
+	<div class="inner index-bottom"></div>
+</div>
+<div class="clear"></div>
+</div>
+
+<!--
+EOT;
+}
+require_once template('foot');
+?>

@@ -1,0 +1,57 @@
+<!--<?php
+$thismod=$class_list[$classnow]['module'];
+$leftnavlist=$thismod==11?methtml_advsearch():($thismod==10?membernavlist():($nav_list2[$class1]!=''?metlabel_navnow(2):0));
+if($thismod>99)$leftnavlist=metlabel_navnow(2);
+$leftnavtitle=$class_list[$class1]['name'];
+if($thismod==11 || $thismod==10)$leftnavtitle=$class_list[$classnow]['name'];
+$classnows=$classnow;
+if($cvidnow)$classnows=$cvidnow;
+echo <<<EOT
+-->
+<div class="sidebar inner">
+<!--
+EOT;
+if($leftnavlist || $lang_Web_Contactok){
+echo <<<EOT
+-->
+    <div class="sb_nav">
+<!--
+EOT;
+if($leftnavlist){
+echo <<<EOT
+-->
+		<h3 class="title myCorner" data-corner='top 5px'>{$leftnavtitle}</h3>
+		<div class="active" id="sidebar"data-csnow="4" data-class3="0" data-jsok="">{$leftnavlist}</div>
+<!--
+EOT;
+}
+echo <<<EOT
+-->
+<!--
+EOT;
+if($lang_Web_Contactok){
+echo <<<EOT
+-->
+		<h3 class="title myCorner"><span>{$lang_Web_Column1}</span></h3>
+		<div class="active editor contact">{$otherinfo[0][info10]}</div>
+<!--
+EOT;
+}
+echo <<<EOT
+-->
+    </div>
+<!--
+EOT;
+}else{
+$tclass='metwd100';
+}
+echo <<<EOT
+-->
+<!--
+EOT;
+require_once template('webtop'); 
+echo <<<EOT
+-->
+<!--
+EOT;
+?>

@@ -1,0 +1,19 @@
+<!--<?php
+require_once template('head'); 
+require_once template('webbar'); 
+echo <<<EOT
+-->
+        <div id="showproduct" class="active">
+			<h1 class='title'>{$product[title]}</h1>
+			<div style="clear:both;"></div>
+			<div class='editor' id="metbox">
+				$product[content]
+			</div>
+	    </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--
+EOT;
+require_once template('foot'); 
+?>
