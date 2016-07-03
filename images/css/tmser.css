@@ -78,17 +78,6 @@ select {
 	background-image:url(../default/header_grey.gif);	
 }
 
-.content-container{	
-	color: #646464;
-    display: table;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0 auto;
-    position: relative;
-    width: 1280px;
-    table-layout:fixed;
-}
-
 .content-container2{	
     margin: 0 auto;
     position: relative;
@@ -3116,9 +3105,8 @@ a:hover, a:active {
 }
 
 .head-image {
-
-background:#001739 url("../default/header_world_long2.jpg") no-repeat scroll 57% center;
-height:99px;
+background:#001739;
+height:84px;
 padding-left:4%;
 width:96%;
 }
@@ -3126,28 +3114,13 @@ width:96%;
 .head-image a {
  padding-top:20px;
  display:block;
+ float:left;
 }
 
 .header-apps {
-background: #000000;
-background: -moz-linear-gradient(top, #000000 0%, #4b4b4b 0%, #bebebe 27%, #dcdcdc 45%, #f2f2f2 80%);
-background: -webkit-linear-gradient(top, #000000 0%,#4b4b4b 0%,#bebebe 27%,#dcdcdc 45%,#f2f2f2 80%);
-background: linear-gradient(to bottom, #000000 0%,#4b4b4b 0%,#bebebe 27%,#dcdcdc 45%,#f2f2f2 80%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f2f2f2',GradientType=0 );
-
-    border-bottom: 3px solid #999999;
-    border-collapse: collapse;
-    border-top: 3px solid #999999;
     display: block;
-    height: 40px;
-    left: 0;
-    position: relative;
-	width:auto;
-	z-index:57;
-         -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
-
--moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
+    margin-top: 36px;
+    float:right;
 }
 
 .header-same {
@@ -3160,14 +3133,6 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.4);
     height: 27px;
     position: relative;
     width: 18%;
-}
-
-.header-center {
-	 display: inline-block;
-    float: left;
-    margin: 0 auto;
-    position: relative;
-    width: 990px;
 }
 
 .header-bottom {	
@@ -5623,26 +5588,24 @@ background: url("../default/header_bg_r.gif") repeat-x scroll 0 -40px #646464;
 }
 
 
-	#moving_tab {
-		/* hide overlength child elements*/
-
+#moving_tab {
 		overflow:hidden;	
-		/* all the child elements are refering to this width */
-		width:990px;
-		/* fix ie 6 overflow bug */
 		position:relative;	
 		/* styling */
 		border:none;	
 		margin:0 auto;
 	}
-
-	
+#moving_tab li a{
+	color:#Fff;
+	font-size:14px;
+}
+#moving_tab li.navdown a{
+	color:#FfF499;
+}
 #moving_tab .tabs {
 			/* enable absolute position for .lava */
 			position:relative;	
 			height:33px;	
-			/* styling */
-			padding-top:10px;
 			cursor:default;
 			text-align:center
 		}
@@ -5651,22 +5614,14 @@ background: url("../default/header_bg_r.gif") repeat-x scroll 0 -40px #646464;
 			cursor:pointer;
 			/* enable z-index */
 			position:relative;
-			z-index:10;
-			/* display in one row */
 			float:left;
 			display:block;
-padding-top:4px;
-			/* width = half size of #moving_tab */
-			width:165px;
-			/* height = height of .tabs */
 		color: #354DD3;
 	text-decoration: none;
 	font-size:15px;
 	font-weight:bold;
-		font-family:Arial, Helvetica, sans-serif;
-		text-shadow: 0px 2px 7px #ffffff, 0px 0px 4px #ffffff,0px 0px 3px #ffffff,0px 1px 2px #ffffff, 0px 0px 1px #ffffff;
-		filter: Shadow(Color=white, Direction=90, Strength=5);
-		}
+	font-family:Arial, Helvetica, sans-serif;
+}
 
 .contact-contain {
    background-color: #f7f7f7;
@@ -5694,17 +5649,7 @@ height: 100% !important;
 }
 
 #moving_tab .tabs .navdown {
-			/* Set it to absolute */
-border-top:1px solid #3E3E3E;
-border-left:1px solid #3E3E3E;
-border-right:1px solid #3E3E3E;
-border-bottom:0px solid #3E3E3E;
-border-radius: 6px 6px 0px 0px;
-top:-4px; left:0;
 height:32px;
-line-height:24px;
-background: url(../default/header_bg_r.gif) repeat-x 0 -40px;
-background-color:#646464;
 		}
 #moving_tab .tabs dl {
 display:none
